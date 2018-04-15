@@ -1,6 +1,13 @@
 #fionacci
-def fibonacci(n):
-    if n == 1 or n == 2:
-        return 1
-    return fibonacci(n - 1) + fibonacci(n - 2)
-print(fibonacci(7))
+def fibonacci():
+    n = int(input('Enter n: '))
+    prev1 = 0 
+    prev2 = 1
+    fib = 1
+    while fib <= n:
+        fib = prev1 + prev2
+        print(fib, end = ' ')
+        prev1 = prev2
+        prev2 = fib
+    
+fibonacci()    
