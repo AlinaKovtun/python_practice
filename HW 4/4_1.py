@@ -1,6 +1,5 @@
 import math
 import sys
-import re
 
 
 op_list = ['+', '-', '*', '/', '%', '^', 'sqrt', 'sin', 'cos', 'tg']
