@@ -9,27 +9,27 @@ op_list = ['+', '-', '*', '/', '%', '^', 'sqrt', 'sin', 'cos', 'tg']
 def Calc(a, op):
     s = []
     if op == '+':
-        b = int(input('b = '))
+        try_b()
         print(a+b)
         s.append(a+b)
     elif op == '-':
-        b = int(input('b = '))
+        try_b()
         print(a-b)
         s.append(a-b)
     elif op == '*':
-        b = int(input('b = '))
+        try_b()
         print(a*b)
         s.append(a*b)
     elif op == '/':
-        b = int(input('b = '))
+        try_b()
         print(a//b)
         s.append(a//b)
     elif op == '%':
-        b = int(input('b = '))
+        try_b()
         print(a%b)
         s.append(a%b)
     elif op == '^':
-        b = int(input('b = '))
+        try_b()
         print(math.pow(b,a))
         s.append(math.pow(b,a))
     elif op == 'sqrt':
@@ -59,6 +59,14 @@ def try_op():
     if not op in (op_list):
             print('Invalid input!')
             try_op()
+            
+def try_b():
+    try:
+        global b
+        b = int(input('b = '))
+    except ValueError:
+        print('Invalid input!')
+        try_b()            
             
 def repeat():
     rep = input('Press any key to continue, press "x" to exit.')
