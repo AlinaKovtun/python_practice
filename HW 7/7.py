@@ -12,6 +12,6 @@ try:
         for line in file:
             line
             count_rows += 1
-        print(count_rows)  
+        print('Number of lines in the file: ', count_rows)  
 except IOError:
     print("An IOError has occurred!")
