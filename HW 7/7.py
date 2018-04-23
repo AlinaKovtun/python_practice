@@ -19,9 +19,18 @@ try:
 except IOError:
     print('An IOError has occurred!')
     
-    
+
+sstr = sstr.lower()    
 wordList = sstr.split()
 i = 0
+for word in wordList:
+    if word[-1] in punctuation:
+        wordList[i] = word[:-1]
+        word = wordList[i]
+    if word[0] in punctuation:
+        wordList[i] = word[1:]
+    i += 1
+i = 0    
 for word in wordList:
     if word[-1] in punctuation:
         wordList[i] = word[:-1]
@@ -37,16 +46,17 @@ while i < len(wordList):
 print('Number of words in the file: ', count_words)   
 
 
-sstr.lower()   
-count_nonrep = 0
 nonrep_words = list()
 for word in wordList:
+    if not word.isalpha():
+        continue
     if word in nonrep_words:
-        pass
+        nonrep_words.remove(word)
     else:
         nonrep_words.append(word) 
-        count_nonrep += 1
-print('Number of unrepeated words in the file: ', count_nonrep)            
+        
+print('Number of unrepeated words in the file: ', len(nonrep_words))    
+print(sorted(nonrep_words))
 
 
 count_vowels = 0
