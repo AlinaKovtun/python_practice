@@ -20,7 +20,6 @@ except IOError:
     print('An IOError has occurred!')
     
     
-    
 wordList = sstr.split()
 i = 0
 for word in wordList:
@@ -30,15 +29,24 @@ for word in wordList:
     if word[0] in punctuation:
         wordList[i] = word[1:]
     i += 1
-    
 count_words = 0    
 i = 0
 while i < len(wordList):
-#    print(wordList[i], end=' ')
     i += 1
-    count_words += 1
-    
+    count_words += 1 
 print('Number of words in the file: ', count_words)   
+
+
+sstr.lower()   
+count_nonrep = 0
+nonrep_words = list()
+for word in wordList:
+    if word in nonrep_words:
+        pass
+    else:
+        nonrep_words.append(word) 
+        count_nonrep += 1
+print('Number of unrepeated words in the file: ', count_nonrep)            
 
 
 count_vowels = 0
@@ -47,44 +55,9 @@ for i in sstr:
         count_vowels += 1    
 print('Number of vowels in the text: ', count_vowels)
 
+
 count_consonants = 0
 for i in sstr:
     if i in list("BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz"):
         count_consonants += 1    
 print('Number of consonants in the text: ', count_consonants)     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
